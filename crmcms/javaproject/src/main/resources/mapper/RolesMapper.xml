@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.crm.mapper.RolesMapper">
+
+    <select id="getMenu" resultType="com.neusoft.crm.entity.Sysinfo">
+        SELECT s.*
+        FROM role_sysinfo_r rsr,sysinfo s
+        WHERE rsr.sysno=s.sysno AND rsr.roleno=#{roleno}
+
+    </select>
+</mapper>

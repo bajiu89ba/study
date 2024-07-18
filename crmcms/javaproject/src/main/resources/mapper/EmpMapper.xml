@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.crm.mapper.EmpMapper">
+    <select id="qryResponsible" resultType="com.neusoft.crm.entity.Emp">
+        SELECT e.*
+        FROM customer c,emp e
+        WHERE c.servicer=e.empno AND c.areano=#{areano}
+    </select>
+
+    <select id="login" resultType="com.neusoft.crm.entity.Emp">
+        SELECT *
+        FROM emp
+        WHERE logid=#{param.logid} AND logpwd=#{param.logpwd}
+    </select>
+
+</mapper>
